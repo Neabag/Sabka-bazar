@@ -21,18 +21,20 @@ footer {
   padding: 15px;
   background: #eaeaea;
   text-align: center;
+  font-weight: 600;
+  font-size: 14px;
 }
 
 button:hover {
   cursor: pointer;
 }
-/* button:focus {
+button:focus {
   outline: none;
   cursor: pointer;
 }
 div:focus {
   outline: none;
-} */
+}
 .cartModel {
   z-index: 4;
   position: fixed;
