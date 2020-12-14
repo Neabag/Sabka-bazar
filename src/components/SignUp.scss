@@ -1,0 +1,56 @@
+.signUpPage {
+  display: flex;
+  .pageDetails {
+    flex: 1 1;
+    margin: 70px 80px;
+    .loginHead {
+      strong {
+        font-size: 30px;
+      }
+      padding-bottom: 20px;
+    }
+  }
+
+  .signupForm {
+    flex: 2 1;
+    margin: 70px 0;
+    color: #898585;
+    input {
+      text-decoration: none;
+      border: none;
+      width: 270px;
+      padding: 0;
+      outline: none;
+    }
+    .email,
+    .password,
+    .cnfpassword,
+    .loginBtn,
+    .fname,
+    .lname {
+      margin-bottom: 15px;
+      width: 300px;
+      height: 42px;
+    }
+    .email,
+    .password,
+    .cnfpassword,
+    .fname,
+    .lname {
+      border-bottom: 2px solid lightgray;
+      &:focus-within {
+        color: #50dae2;
+        font-weight: 600;
+        border-bottom: 2px solid #50dae2;
+      }
+    }
+    .loginBtn {
+      color: white;
+      background: #b90e3fd9;
+      border: none;
+    }
+    .selected {
+      color: #37c1cfcf;
+    }
+  }
+}

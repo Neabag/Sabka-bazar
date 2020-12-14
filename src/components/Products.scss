@@ -1,0 +1,146 @@
+.plp {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.prodCategories {
+  background: #eaeaea;
+  flex: 2 1;
+}
+.prodCategory {
+  padding: 12px;
+  padding-left: 20px;
+  border-bottom: 1px solid #c1bbbb;
+  color: #626060;
+  span {
+    cursor: pointer;
+    font-weight: 600;
+  }
+}
+.allProducts {
+  flex: 6 1;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+  padding: 10px 0px 0px 10px;
+}
+.product {
+  width: 22%;
+  padding: 20px 10px 10px 0px;
+  border-bottom: 2px dotted #c7c7c7;
+  margin: 0;
+  position: relative;
+  margin-left: 10px;
+
+  .prodName {
+    padding: 0 10px;
+    height: 50px;
+    margin-bottom: 20px;
+  }
+  .prodImageNdDes {
+    display: flex;
+    flex-direction: column;
+  }
+  img {
+    width: 100%;
+  }
+  .prodDesc {
+    background: #eaeaea;
+    height: 120px;
+    padding: 0 10px;
+    p {
+      height: 95px;
+      overflow: hidden;
+      padding: 10px 0px;
+      margin: 0px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+  }
+  .priceDesc {
+    margin: 15px 0px 10px 0px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .prodPrice {
+    font-size: 14px;
+    padding-top: 13px;
+  }
+  .buyBtn {
+    background: #b90e3fd9;
+    min-width: 100px;
+    height: 40px;
+    color: #fff;
+    border: none;
+    border-radius: 1px;
+    font-size: 14px;
+  }
+}
+.prodCateMobile {
+  display: none;
+  font-size: 30px;
+}
+.selected {
+  color: white;
+  background: #b90e3fd9;
+}
+@media screen and (max-width: 1024px) {
+  .product {
+    width: 45%;
+    .prodImageNdDes {
+      flex-direction: row;
+    }
+    .prodImg,
+    .prodDesc {
+      flex: 1 1;
+      height: 170px;
+    }
+    .prodImg {
+      margin-right: 10px;
+    }
+    button {
+      width: 100%;
+    }
+  }
+  .product .prodName {
+    margin-bottom: 0px;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  .plp {
+    flex-direction: column;
+  }
+  .product {
+    width: 90%;
+  }
+  .phoneProdDes {
+    flex: 1 1;
+    display: flex;
+    flex-direction: column;
+    button {
+      width: 100%;
+    }
+    .prodDesc {
+      flex: 7 1;
+    }
+  }
+  .prodCategory {
+    display: none;
+  }
+  .selected {
+    display: flex;
+    justify-content: space-between;
+  }
+  .enable {
+    display: block;
+  }
+  .prodCateMobile {
+    background: initial;
+  }
+  .product .prodName {
+    margin-bottom: 0px;
+  }
+}
