@@ -8,7 +8,7 @@ function Slider() {
     slidesData: [],
     slideIndex: 0,
   });
-
+  const bannerUrl = "http://localhost:3000/banners";
   const slideRef = useRef();
   const slidesRef = useRef();
   const prevRef = useRef();
@@ -19,7 +19,7 @@ function Slider() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/banners")
+      .get(bannerUrl)
       .then((response) => {
         setState((prevState) => {
           return { ...prevState, slidesData: response.data };
@@ -35,7 +35,7 @@ function Slider() {
       .catch(function (error) {
         // manipulate the error response here
       });
-  }, []);
+  }, [sliderEle]);
 
   function slide(wrapper, slidesLength, items, prev, next) {
     var posX1 = 0,

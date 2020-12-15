@@ -6,6 +6,8 @@ import "./Products.scss";
 
 function Products(props) {
   let { categoryID } = useParams();
+  const productsUrl = "http://localhost:3000/products";
+  const categoryUrl = "http://localhost:3000/categories";
   const [state, setState] = useState({
     products: [],
     categories: [],
@@ -17,7 +19,7 @@ function Products(props) {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/products")
+      .get(productsUrl)
       .then((response) => {
         const products =
           categoryID === "all"
@@ -36,7 +38,7 @@ function Products(props) {
         // manipulate the error response here
       });
     axios
-      .get("http://localhost:3000/categories")
+      .get(categoryUrl)
       .then((response) => {
         setState((prevState) => {
           return { ...prevState, categories: response.data };
@@ -49,7 +51,7 @@ function Products(props) {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [categoryID]);
 
   const handleResize = (e) => {
     setState((prevState) => {

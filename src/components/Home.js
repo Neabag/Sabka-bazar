@@ -6,12 +6,13 @@ import Slider from "./Slider";
 import "./Home.scss";
 
 function Home() {
+  const categoryUrl = "http://localhost:3000/categories";
   const [state, setState] = useState({
     categories: [],
   });
   useEffect(() => {
     axios
-      .get("http://localhost:3000/categories")
+      .get(categoryUrl)
       .then((response) => {
         setState((prevState) => {
           return { ...prevState, categories: response.data };
