@@ -20,14 +20,14 @@
 }
 .allProducts {
   flex: 6 1;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
   width: 100%;
   justify-content: space-between;
   padding: 10px 0px 0px 10px;
 }
 .product {
-  width: 22%;
+  grid-column: span 2;
   padding: 20px 10px 10px 0px;
   border-bottom: 2px dotted #c7c7c7;
   margin: 0;
@@ -89,7 +89,7 @@
 }
 @media screen and (max-width: 1024px) {
   .product {
-    width: 45%;
+    grid-column: span 4;
     .prodImageNdDes {
       flex-direction: row;
     }
@@ -115,7 +115,7 @@
     flex-direction: column;
   }
   .product {
-    width: 90%;
+    grid-column: span 8;
   }
   .phoneProdDes {
     flex: 1 1;
