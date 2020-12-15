@@ -1,3 +1,4 @@
+@import "./config";
 .model {
   z-index: 2;
   position: relative;
@@ -8,7 +9,7 @@
   top: 96px;
   right: 0;
   position: absolute;
-  background: #eaeaea;
+  background: $secondaryClr;
   width: 40%;
   border: 0.6px solid black;
 }
@@ -17,7 +18,7 @@
   background: black;
   padding: 20px;
   margin-top: 0px;
-  color: white;
+  color: $primaryClr;
   display: flex;
   justify-content: space-between;
 }
@@ -35,14 +36,14 @@
 }
 .cartItem {
   display: flex;
-  background: white;
+  background: $primaryClr;
   margin-bottom: 10px;
   img {
     padding: 5px 0 5px 10px;
   }
 }
 .cartOffer {
-  background: white;
+  background: $primaryClr;
   padding: 10px;
   margin: 10px;
   display: flex;
@@ -58,8 +59,8 @@
     display: flex;
   }
   .btnCnt {
-    background: #b90e3fd9;
-    color: white;
+    background: $btn-color;
+    color: $primaryClr;
     padding: 0px;
     border-radius: 10px;
     width: 20px;
@@ -79,7 +80,7 @@
 .cartFooter {
   position: sticky;
   bottom: 0;
-  background: white;
+  background: $primaryClr;
   width: 100%;
 }
 .startShopping,
@@ -87,11 +88,8 @@
   padding-bottom: 1px;
   button {
     margin: 10px;
-    background: #b90e3fd9;
-    text-align: center;
+    @include set-btn-style();
     padding: 15px;
-    color: white;
-    border: none;
     width: calc(100% - 20px);
   }
 }
@@ -110,7 +108,7 @@
   padding-top: 10px;
 }
 .noItem {
-  background: white;
+  background: $primaryClr;
   text-align: center;
   padding: 60% 0px;
   .noItemsMess {
@@ -142,7 +140,7 @@
     border: none;
     height: calc(100vh - 90px);
     .cartHead {
-      background: white;
+      background: $primaryClr;
       color: black;
       margin-top: 30px;
       .cartHeadRight {

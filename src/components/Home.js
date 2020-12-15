@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 import Slider from "./Slider";
-import "./Home.scss";
+import "../styles/Home.scss";
 
 function Home() {
   const categoryUrl = "http://localhost:3000/categories";

@@ -1,11 +1,12 @@
+@import "./config";
+
 .plp {
-  margin: 0 auto;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
 }
 .prodCategories {
-  background: #eaeaea;
+  background: $secondaryClr;
   flex: 2 1;
 }
 .prodCategory {
@@ -23,13 +24,12 @@
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   width: 100%;
-  justify-content: space-between;
-  padding: 10px 0px 0px 10px;
+  padding: 0px 0px 0px 10px;
 }
 .product {
   grid-column: span 2;
   padding: 20px 10px 10px 0px;
-  border-bottom: 2px dotted #c7c7c7;
+  border-bottom: 2px dotted $secondaryClr;
   margin: 0;
   position: relative;
   margin-left: 10px;
@@ -47,7 +47,7 @@
     width: 100%;
   }
   .prodDesc {
-    background: #eaeaea;
+    background: $secondaryClr;
     height: 120px;
     padding: 0 10px;
     p {
@@ -69,14 +69,9 @@
     padding-top: 13px;
   }
   .buyBtn {
-    background: #b90e3fd9;
+    @include set-btn-style();
     min-width: 100px;
     height: 40px;
-    color: #fff;
-    border: none;
-    border-radius: 1px;
-    font-size: 14px;
-    font-weight: 600;
   }
 }
 .prodCateMobile {
@@ -84,8 +79,8 @@
   font-size: 30px;
 }
 .selected {
-  color: white;
-  background: #b90e3fd9;
+  color: $primaryClr;
+  background: $btn-color;
 }
 @media screen and (max-width: 1024px) {
   .product {

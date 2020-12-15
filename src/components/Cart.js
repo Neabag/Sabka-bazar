@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./Cart.scss";
+import "../styles/Cart.scss";
 
 function Cart(props) {
   let total = 0;

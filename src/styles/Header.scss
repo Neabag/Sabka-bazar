@@ -1,3 +1,5 @@
+@import "./config";
+
 a {
   text-decoration: none;
   color: #626060;
@@ -14,7 +16,7 @@ a {
   z-index: 3;
   top: 0px;
   overflow-x: hidden;
-  background: white;
+  background: $primaryClr;
 }
 
 .mainHeader {
@@ -71,7 +73,7 @@ a {
   }
 
   .cartDiv {
-    background: #eaeaea;
+    background: $secondaryClr;
     display: flex;
     align-items: center;
     padding: 15px 40px 15px 20px;

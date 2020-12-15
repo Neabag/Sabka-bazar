@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 
-import "./Slider.scss";
+import "../styles/Slider.scss";
 
 function Slider() {
   const [state, setState] = useState({
@@ -15,8 +15,6 @@ function Slider() {
   const nextRef = useRef();
   const btnsRef = useRef();
 
-  var sliderEle = document.getElementById("slider");
-
   useEffect(() => {
     axios
       .get(bannerUrl)
@@ -24,20 +22,14 @@ function Slider() {
         setState((prevState) => {
           return { ...prevState, slidesData: response.data };
         });
-        slide(
-          sliderEle,
-          response.data.length,
-          slidesRef.current,
-          prevRef,
-          nextRef
-        );
+        slide(response.data.length, slidesRef.current, prevRef, nextRef);
       })
       .catch(function (error) {
         // manipulate the error response here
       });
-  }, [sliderEle]);
+  }, []);
 
-  function slide(wrapper, slidesLength, items, prev, next) {
+  function slide(slidesLength, items, prev, next) {
     var posX1 = 0,
       posX2 = 0,
       posInitial,

@@ -1,15 +1,14 @@
+@import "./config";
+
 .productBycategory {
   padding-top: 15px;
   img {
     height: 200px;
   }
   button {
-    color: white;
-    background: #b90e3fd9;
-    border: none;
+    @include set-btn-style();
     padding: 10px 15px;
     margin-top: 15px;
-    font-weight: 600;
   }
 }
 .leftFlex,

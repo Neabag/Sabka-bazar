@@ -1,7 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 
-import "./Login.scss";
+import "../styles/Login.scss";
 
 function Login() {
   const history = useHistory();

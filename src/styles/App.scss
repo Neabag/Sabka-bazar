@@ -1,8 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Dosis:400,600,700");
-* {
-  font-family: Dosis;
-  font-size: 16px;
-}
+@import "./config";
 
 body {
   margin: 0;
@@ -19,19 +15,12 @@ footer {
 }
 .footer {
   padding: 15px;
-  background: #eaeaea;
+  background: $secondaryClr;
   text-align: center;
   font-weight: 600;
   font-size: 14px;
 }
 
-button:hover {
-  cursor: pointer;
-}
-button:focus {
-  outline: none;
-  cursor: pointer;
-}
 div:focus {
   outline: none;
 }

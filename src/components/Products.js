@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router";
 
-import "./Products.scss";
+import "../styles/Products.scss";
 
 function Products(props) {
   let { categoryID } = useParams();

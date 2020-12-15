@@ -1,3 +1,5 @@
+@import "./config";
+
 .signUpPage {
   display: flex;
   .pageDetails {
@@ -40,20 +42,15 @@
     .cnfpassword,
     .fname,
     .lname {
-      border-bottom: 2px solid lightgray;
+      border-bottom: 2px solid $secondaryClr;
       &:focus-within {
-        color: #50dae2;
+        color: $focus-color;
         font-weight: 600;
-        border-bottom: 2px solid #50dae2;
+        border-bottom: 2px solid $focus-color;
       }
     }
     .loginBtn {
-      color: white;
-      background: #b90e3fd9;
-      border: none;
-    }
-    .selected {
-      color: #37c1cfcf;
+      @include set-btn-style();
     }
   }
 }
