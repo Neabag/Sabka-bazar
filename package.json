@@ -16,12 +16,12 @@
     "canned": "^0.3.12"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "reactstart": "react-scripts start",
     "server": "canned -p 3000 ./server",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "all": "npm-run-all --parallel start server"
+    "start": "npm-run-all --parallel reactstart server"
   },
   "eslintConfig": {
     "extends": [
