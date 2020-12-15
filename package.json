@@ -18,7 +18,7 @@
   "scripts": {
     "reactstart": "react-scripts start",
     "server": "canned -p 3000 ./server",
-    "build": "react-scripts build",
+    "build": " npm-run-all --parallel server react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "start": "npm-run-all --parallel reactstart server"
