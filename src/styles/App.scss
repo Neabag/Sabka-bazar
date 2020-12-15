@@ -5,13 +5,11 @@ body {
 }
 main {
   position: relative;
-  max-width: 1024px;
-  margin: 0 auto;
+  @include set-max-width();
 }
 
 footer {
-  max-width: 1024px;
-  margin: 0 auto;
+  @include set-max-width();
 }
 .footer {
   padding: 15px;

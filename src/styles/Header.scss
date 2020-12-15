@@ -21,8 +21,7 @@ a {
 
 .mainHeader {
   display: grid;
-  max-width: 1024px;
-  margin: 0 auto;
+  @include set-max-width();
   height: 96px;
   grid-template-columns: 50% 50%;
   grid-template-areas: "leftHeader rightHeader";

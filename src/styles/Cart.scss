@@ -2,8 +2,7 @@
 .model {
   z-index: 2;
   position: relative;
-  max-width: 1024px;
-  margin: 0 auto;
+  @include set-max-width();
 }
 .cartContent {
   top: 96px;
