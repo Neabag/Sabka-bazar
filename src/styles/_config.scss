@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Dosis:400,600,700");
-
 $btn-color: #b90e3fd9;
 $primaryClr: white;
 $secondaryClr: #eaeaea;
@@ -24,4 +22,17 @@ $focus-color: #50dae2;
 @mixin set-max-width() {
   max-width: 1024px;
   margin: 0 auto;
+}
+
+.email,
+.password,
+.cnfpassword,
+.fname,
+.lname {
+  border-bottom: 2px solid $secondaryClr;
+  &:focus-within {
+    color: $focus-color;
+    font-weight: 600;
+    border-bottom: 2px solid $focus-color;
+  }
 }

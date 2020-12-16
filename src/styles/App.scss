@@ -5,6 +5,7 @@ body {
 }
 main {
   position: relative;
+  overflow-x: hidden;
   @include set-max-width();
 }
 
