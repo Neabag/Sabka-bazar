@@ -1,20 +1,21 @@
 $btn-color: #b90e3fd9;
-$primaryClr: white;
-$secondaryClr: #eaeaea;
+$primary-color: white;
+$secondary-color: #eaeaea;
 $focus-color: #50dae2;
 
 @mixin set-btn-style() {
   background-color: $btn-color;
-  color: $primaryClr;
+  color: $primary-color;
   border: none;
   font-weight: 600;
   text-align: center;
+  padding: 0.8rem;
   &:hover {
     cursor: pointer;
     transform: scale(0.98);
   }
   &:focus {
-    outline: none;
+    outline-color: $btn-color;
     cursor: pointer;
   }
 }
@@ -22,17 +23,4 @@ $focus-color: #50dae2;
 @mixin set-max-width() {
   max-width: 1024px;
   margin: 0 auto;
-}
-
-.email,
-.password,
-.cnfpassword,
-.fname,
-.lname {
-  border-bottom: 2px solid $secondaryClr;
-  &:focus-within {
-    color: $focus-color;
-    font-weight: 600;
-    border-bottom: 2px solid $focus-color;
-  }
 }

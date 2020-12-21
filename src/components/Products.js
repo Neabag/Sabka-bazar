@@ -6,8 +6,9 @@ import "../styles/Products.scss";
 
 function Products(props) {
   let { categoryID } = useParams();
-  const productsUrl = "http://localhost:3000/products";
-  const categoryUrl = "http://localhost:3000/categories";
+  const productsUrl = "https://bazarservice.herokuapp.com/products";
+  const categoryUrl = "https://bazarservice.herokuapp.com/categories";
+  const addTocartUrl = "https://bazarservice.herokuapp.com/addToCart";
   const [state, setState] = useState({
     products: [],
     categories: [],
@@ -60,6 +61,11 @@ function Products(props) {
   };
 
   const filterByCategory = (id) => {
+    if (state.windowWidth < 737 && state.selected === id) {
+      setState((prevState) => {
+        return { ...prevState, enableCategory: !prevState.enableCategory };
+      });
+    }
     if (id === state.selected || id === "" || id === "all") {
       setState((prevState) => {
         return {
@@ -101,7 +107,7 @@ function Products(props) {
         }
       });
     }
-    httpRequest("POST", "http://localhost:3000/addToCart", {
+    httpRequest("POST", addTocartUrl, {
       id: prod.id,
     }).then((response) => {
       if (response.response === "Success") {
@@ -109,49 +115,35 @@ function Products(props) {
       }
     });
   };
-  const keyPressHandler = (e, category) => {
-    if (e.charCode === 13) {
-      filterByCategory(category);
-    }
-  };
 
-  const toggleProdcategory = () => {
-    setState((prevState) => {
-      return { ...prevState, enableCategory: !prevState.enableCategory };
-    });
-  };
   return (
     <div className="plp">
-      <div className="prodCategories">
+      <div className="prodCategories flex--column">
         {state.categories.length > 0
           ? state.categories.map((category, index) => {
               return category.enabled ? (
-                <div
+                <a
                   className={
                     state.selected === category.id
-                      ? "prodCategory selected"
+                      ? "prodCategory selected p1"
                       : state.enableCategory
-                      ? "prodCategory enable"
-                      : "prodCategory"
+                      ? "prodCategory enable p1"
+                      : "prodCategory p1"
                   }
                   key={index}
-                  role="button"
-                  tabIndex="0"
-                  onKeyPress={(e) => {
-                    keyPressHandler(e, category.id);
-                  }}
                   onClick={filterByCategory.bind(this, category.id)}
+                  href={"#products"}
+                  title={category.title}
                 >
-                  <span>{category.name}</span>
+                  {category.name}
                   <span
                     className={
                       state.selected === category.id
                         ? "prodCateMobile selected fa fa-angle-down"
                         : "prodCateMobile fa fa-angle-down"
                     }
-                    onClick={toggleProdcategory}
                   ></span>
-                </div>
+                </a>
               ) : (
                 ""
               );
@@ -162,7 +154,7 @@ function Products(props) {
         {state.products.length > 0
           ? state.products.map((product, index) => {
               return (
-                <div className="product" key={product.id}>
+                <div className="product py1" key={product.id}>
                   <div className="prodName">
                     <strong>{product.name}</strong>
                   </div>
@@ -180,7 +172,7 @@ function Products(props) {
                             {product.description}
                           </p>
                         </div>
-                        <div className="priceDesc">
+                        <div className="priceDesc mt1">
                           <button
                             className="buyBtn"
                             onClick={buyNow.bind(this, product)}
@@ -197,7 +189,7 @@ function Products(props) {
                   </div>
 
                   {state.windowWidth > 1024 ? (
-                    <div className="priceDesc">
+                    <div className="priceDesc mt1">
                       <div className="prodPrice">
                         {"MRP Rs." + product.price}
                       </div>
@@ -212,7 +204,7 @@ function Products(props) {
                     ""
                   )}
                   {state.windowWidth < 1025 && state.windowWidth > 736 ? (
-                    <div className="priceDesc">
+                    <div className="priceDesc mt1">
                       {" "}
                       <button
                         className="buyBtn"

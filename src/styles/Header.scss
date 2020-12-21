@@ -3,39 +3,36 @@
 a {
   text-decoration: none;
   color: #626060;
-  font-weight: 600;
-  font-size: 18px;
 }
 
 .header-wrapper {
-  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
-  margin-bottom: 5px;
-  padding-top: 5px;
+  box-shadow: 0 0.3rem 0.3rem rgba(0, 0, 0, 0.2);
+  margin-bottom: 0.3rem;
+  padding-top: 0.5rem;
   position: sticky;
   width: 100%;
-  z-index: 3;
-  top: 0px;
+  z-index: 100;
+  top: 0;
   overflow-x: hidden;
-  background: $primaryClr;
+  background: $primary-color;
 }
 
 .mainHeader {
   display: grid;
   @include set-max-width();
-  height: 96px;
+  height: 6rem;
   grid-template-columns: 50% 50%;
   grid-template-areas: "leftHeader rightHeader";
   li:last-child {
-    padding-left: 25px;
-    padding-right: 10px;
+    padding-left: 1.6rem;
+    padding-right: 0.6rem;
   }
 }
 .leftHead {
   grid-area: leftHeader;
   display: flex;
   nav {
-    padding-top: 50px;
-    padding-left: 50px;
+    padding: 3rem 0 0 3rem;
   }
 }
 .rightHead {
@@ -47,18 +44,14 @@ a {
   position: relative;
 }
 
-.auth {
+.auth,
+.nav {
   list-style-type: none;
   display: flex;
   justify-content: flex-end;
   margin: 0;
-}
-
-.nav {
-  list-style-type: none;
-  display: flex;
-  justify-content: center;
-  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
 .cartLogo {
@@ -67,17 +60,14 @@ a {
   right: 0;
   display: flex;
   justify-content: flex-end;
-  :hover {
-    cursor: pointer;
-  }
-
-  .cartDiv {
-    background: $secondaryClr;
-    display: flex;
-    align-items: center;
-    padding: 15px 40px 15px 20px;
-    span {
-      padding-left: 10px;
+  background: $secondary-color;
+  align-items: center;
+  padding-right: 2.5rem;
+  button {
+    background: inherit;
+    border: none;
+    :hover {
+      cursor: pointer;
     }
   }
 }
@@ -85,7 +75,6 @@ a {
   .mainHeader,
   .header-wrapper {
     max-width: calc(100vw);
-    z-index: 7;
   }
 }
 @media screen and (max-width: 736px) {
@@ -93,12 +82,13 @@ a {
     display: none;
   }
   .logo {
-    height: 40px;
+    height: 2.5rem;
   }
-  .cartLogo .cartDiv {
-    padding: 10px 25px 10px 15px;
+  .cartLogo {
+    padding: 0.8rem;
+    padding-right: 2rem;
   }
   .mainHeader {
-    height: 50px;
+    height: 3rem;
   }
 }

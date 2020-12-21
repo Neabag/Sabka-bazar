@@ -10,7 +10,7 @@ function Cart(props) {
   let cartOffertext = "You won't find it cheaper anywhere";
   return (
     <div
-      style={props.toggle === true ? { display: "block" } : { display: "none" }}
+      style={props.toggle === true ? { display: "flex" } : { display: "none" }}
       className="model"
     >
       <div className="cartContent">
@@ -21,9 +21,9 @@ function Cart(props) {
             </span>
             <span>{props.count > 0 ? " (" + props.count + " Items)" : ""}</span>
           </div>
-          <div className="cartHeadRight" onClick={props.cartClose}>
+          <button className="cartHeadRight" onClick={props.cartClose}>
             <i className="fa fa-times" />
-          </div>
+          </button>
         </div>
 
         {props.products.length > 0 ? (

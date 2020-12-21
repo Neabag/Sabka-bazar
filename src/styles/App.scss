@@ -13,18 +13,15 @@ footer {
   @include set-max-width();
 }
 .footer {
-  padding: 15px;
-  background: $secondaryClr;
+  padding: 1rem;
+  background: $secondary-color;
   text-align: center;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 0.9rem;
 }
 
-div:focus {
-  outline: none;
-}
 .cartModel {
-  z-index: 4;
+  z-index: 1000;
   position: fixed;
   top: 0;
   right: 0;
@@ -44,5 +41,97 @@ div:focus {
   .cartModel {
     overflow: hidden;
     background-color: inherit;
+    z-index: 90;
   }
+}
+
+/*  login and signup form css */
+
+.flex--row {
+  display: flex;
+  flex-direction: row;
+}
+.flex--column {
+  display: flex;
+  flex-direction: column;
+}
+
+.page-details {
+  margin: 1.5rem 2rem 0 5rem;
+  flex: 2 1;
+}
+.page-details__heading {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.page-details__desc {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.auth-form {
+  margin: 2rem 0 1rem 0;
+  flex: 3 1;
+}
+
+.form-row {
+  width: 60%;
+  position: relative;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  border-bottom: 2px solid $secondary-color;
+  font-size: 1rem;
+  &:focus-within {
+    border-bottom: 2px solid $focus-color;
+  }
+}
+.form-row__input-text {
+  text-decoration: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding: 0;
+}
+.form-row__input-text:focus + .form-row__label-helper {
+  opacity: 1;
+  padding: 0.5rem 0;
+  bottom: 95%;
+  color: $focus-color;
+}
+
+.form-row__label-helper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  transition: 0.2s bottom, 0.2s opacity;
+}
+.submit {
+  width: 60%;
+  @include set-btn-style();
+}
+
+//utility csse
+.p1 {
+  padding: 1rem;
+}
+.py1 {
+  padding: 1rem 0;
+}
+.px1 {
+  padding: 0 1rem;
+}
+.m1 {
+  margin: 1rem;
+}
+
+.my1 {
+  margin: 1rem 0;
+}
+.mx1 {
+  margin: 0 1rem;
+}
+.mt1 {
+  margin: 1rem 0 0 0;
 }

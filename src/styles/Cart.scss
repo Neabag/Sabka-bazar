@@ -1,57 +1,60 @@
 @import "./config";
 .model {
-  z-index: 2;
+  flex-direction: row-reverse;
   position: relative;
   @include set-max-width();
 }
 .cartContent {
-  top: 96px;
+  top: 6.5rem;
   right: 0;
-  position: absolute;
-  background: $secondaryClr;
-  width: 40%;
-  border: 0.6px solid black;
+  position: relative;
+  background: #eaeaea;
+  width: 38%;
+  border: 0.1rem solid black;
+  height: calc(100vh - 6.5rem);
 }
 
 .cartHead {
   background: black;
-  padding: 20px;
-  margin-top: 0px;
-  color: $primaryClr;
+  padding: 1rem;
+  margin-top: 0;
+  color: $primary-color;
   display: flex;
   justify-content: space-between;
 }
 .cartItems {
-  margin-top: 10px;
-  height: 450px;
+  margin: 1rem 0 0 0;
+  height: calc(100% - 10rem);
   overflow-y: scroll;
+  font-size: 0.8rem;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
 .itemDetails {
   display: block;
-  padding: 15px 15px;
+  padding: 1rem;
   flex: 6 1;
 }
 .cartItem {
   display: flex;
-  background: $primaryClr;
-  margin-bottom: 10px;
+  background: $primary-color;
+  margin-bottom: 0.5rem;
   img {
-    padding: 5px 0 5px 10px;
+    padding: 0.4rem 0 0.4rem 0.6rem;
   }
 }
 .cartOffer {
-  background: $primaryClr;
-  padding: 10px;
-  margin: 10px;
+  background: $primary-color;
+  padding: 0.5rem;
+  margin: 0.7rem;
   display: flex;
   align-items: center;
   span {
-    padding-left: 15px;
+    padding-left: 1rem;
   }
 }
 .quantity {
+  font-weight: 600;
   display: flex;
   justify-content: space-between;
   .btnsHolder {
@@ -59,17 +62,18 @@
   }
   .btnCnt {
     background: $btn-color;
-    color: $primaryClr;
-    padding: 0px;
-    border-radius: 10px;
-    width: 20px;
-    height: 20px;
-    margin: 6px;
+    color: $primary-color;
+    padding: 0;
+    border-radius: 0.7rem;
+    width: 1.3rem;
+    height: 1.3rem;
+    margin: 0.5rem;
     position: relative;
     .btns {
       position: absolute;
-      left: 33%;
-      bottom: 10%;
+      left: 30%;
+      bottom: 5%;
+      font-size: 1.2rem;
     }
     :hover {
       cursor: pointer;
@@ -77,26 +81,24 @@
   }
 }
 .cartFooter {
-  position: sticky;
+  position: absolute;
   bottom: 0;
-  background: $primaryClr;
+  background: $primary-color;
   width: 100%;
 }
 .startShopping,
 .checkOut {
-  padding-bottom: 1px;
   button {
-    margin: 10px;
+    margin: 0.6rem;
     @include set-btn-style();
-    padding: 15px;
-    width: calc(100% - 20px);
+    width: calc(100% - 1.4rem);
   }
 }
 .checkOut button {
   display: flex;
   justify-content: space-between;
   span:last-child {
-    padding-left: 10px;
+    padding-left: 0.6rem;
   }
 }
 .startShopping button {
@@ -104,24 +106,24 @@
 }
 .promo {
   text-align: center;
-  padding-top: 10px;
+  padding-top: 0.6rem;
 }
 .noItem {
-  background: $primaryClr;
+  background: $primary-color;
   text-align: center;
-  padding: 60% 0px;
+  padding: 60% 0;
   .noItemsMess {
-    padding-top: 10px;
+    padding-top: 0.6rem;
   }
 }
 .itemCount,
 .itemPrice,
 .itemTotal {
-  margin: 6px;
+  margin: 0.5rem;
 }
 .itemPrice {
   span:last-child {
-    padding-left: 20px;
+    padding-left: 1.3rem;
   }
 }
 .cartItems::-webkit-scrollbar {
@@ -129,19 +131,24 @@
   display: none;
 }
 .cartHeadRight {
+  background: inherit;
+  color: inherit;
+  border: none;
   cursor: pointer;
+  &:focus {
+    outline: none;
+    transform: scale(0.9);
+  }
 }
 
 @media screen and (max-width: 1024px) {
   .cartContent {
-    top: 90px;
     width: 100%;
     border: none;
-    height: calc(100vh - 90px);
     .cartHead {
-      background: $primaryClr;
+      background: $primary-color;
       color: black;
-      margin-top: 30px;
+      margin-top: 1.5rem;
       .cartHeadRight {
         display: none;
       }
@@ -150,17 +157,14 @@
       background: #eaeaea;
     }
     .cartItems {
-      height: 465px;
+      height: calc(100% - 11.5rem);
     }
   }
 }
 
 @media screen and (max-width: 736px) {
   .cartContent {
-    top: 40px;
-    height: calc(100vh - 60px);
-    .cartItems {
-      height: 420px;
-    }
+    top: 3rem;
+    height: calc(100vh - 3rem);
   }
 }

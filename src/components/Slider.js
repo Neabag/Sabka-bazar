@@ -181,34 +181,21 @@ function Slider() {
             );
           })}
           {state.slidesData.length !== 0 ? (
-            <span className="slide">
-              <img
-                src={".." + state.slidesData[0].bannerImageUrl}
-                alt={state.slidesData[0].bannerImageAlt}
-              />
-            </span>
+            <img
+              className="slide"
+              src={".." + state.slidesData[0].bannerImageUrl}
+              alt={state.slidesData[0].bannerImageAlt}
+            />
           ) : (
             ""
           )}
         </div>
-        <div
-          tabIndex="0"
-          role="button"
-          className="control prev"
-          title="Prev"
-          ref={prevRef}
-        >
+        <a className="control prev" title="Prev" ref={prevRef} href="#home">
           PREV
-        </div>
-        <div
-          tabIndex="0"
-          role="button"
-          className="control next"
-          title="Next"
-          ref={nextRef}
-        >
+        </a>
+        <a className="control next" title="Next" ref={nextRef} href="#home">
           NEXT
-        </div>
+        </a>
       </div>
       <div className="slideBtns" ref={btnsRef}>
         {state.slidesData.map((item, ind) => {

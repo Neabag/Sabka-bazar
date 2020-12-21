@@ -1,23 +1,21 @@
 @import "./config";
 
 .productBycategory {
-  padding-top: 15px;
+  padding-top: 1rem;
   img {
-    height: 200px;
+    height: 12.5rem;
   }
   button {
     @include set-btn-style();
-    padding: 10px 15px;
-    margin-top: 15px;
   }
 }
 .leftFlex,
 .rightFlex {
   display: flex;
   justify-content: space-between;
-  box-shadow: 0px -15px 10px -15px rgba(0, 0, 0, 0.2);
-  margin-top: 12px;
-  padding: 25px 0px;
+  box-shadow: 0 -1rem 0.6rem -1rem rgba(0, 0, 0, 0.2);
+  margin-top: 0.8rem;
+  padding: 1.6rem 0;
 }
 .leftFlex {
   flex-direction: row;
@@ -31,7 +29,7 @@
   flex-direction: column;
   text-align: center;
   align-items: center;
-  padding: 10px;
+  padding: 0.6rem;
   margin: 0 auto;
 }
 .categoryImg {
@@ -40,23 +38,24 @@
   justify-content: center;
 }
 .categoryName {
-  padding-bottom: 10px;
+  padding-bottom: 0.6rem;
   strong {
-    font-size: 20px;
+    font-size: 1.2rem;
   }
 }
 .categoryDesc {
   font-weight: 600;
-  font-size: 14px;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
 }
 @media screen and (max-width: 736px) {
   .productBycategory {
-    padding-top: 5px;
+    padding-top: 0.3rem;
     img {
-      height: 65px;
+      height: 4rem;
     }
     button {
-      font-size: 14px;
+      font-size: 0.9rem;
     }
   }
 }

@@ -6,37 +6,31 @@
   justify-content: flex-start;
 }
 .prodCategories {
-  background: $secondaryClr;
+  background: $secondary-color;
   flex: 2 1;
+  font-weight: 600;
+  font-size: 1rem;
 }
 .prodCategory {
-  padding: 12px;
-  padding-left: 20px;
+  padding-left: 1.5rem;
   border-bottom: 1px solid #c1bbbb;
   color: #626060;
-  span {
-    cursor: pointer;
-    font-weight: 600;
-  }
 }
 .allProducts {
   flex: 6 1;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   width: 100%;
-  padding: 0px 0px 0px 10px;
 }
 .product {
   grid-column: span 2;
-  padding: 20px 10px 10px 0px;
-  border-bottom: 2px dotted $secondaryClr;
-  margin: 0;
+  border-bottom: 2px dotted $secondary-color;
   position: relative;
-  margin-left: 10px;
+  margin-left: 1rem;
 
   .prodName {
-    padding: 0 10px;
-    height: 50px;
+    padding: 0 0.6rem;
+    height: 3.2rem;
     margin-bottom: 40px;
   }
   .prodImageNdDes {
@@ -47,54 +41,51 @@
     width: 100%;
   }
   .prodDesc {
-    background: $secondaryClr;
-    height: 120px;
+    background: $secondary-color;
     padding: 0 10px;
     p {
-      height: 95px;
+      height: 6.3rem;
       overflow: hidden;
-      padding: 10px 0px;
-      margin: 0px;
-      font-size: 14px;
+      padding: 0.7rem 0px;
+      margin: 0;
+      font-size: 0.9rem;
       line-height: 1.5;
     }
   }
   .priceDesc {
-    margin: 15px 0px 10px 0px;
     display: flex;
     justify-content: space-between;
   }
   .prodPrice {
-    font-size: 14px;
-    padding-top: 13px;
+    font-size: 0.9rem;
+    padding-top: 0.8rem;
   }
   .buyBtn {
     @include set-btn-style();
     min-width: 100px;
-    height: 40px;
   }
 }
 .prodCateMobile {
   display: none;
-  font-size: 30px;
+  font-size: 2rem;
 }
 .selected {
-  color: $primaryClr;
+  color: $primary-color;
   background: $btn-color;
 }
 @media screen and (max-width: 1024px) {
   .product {
     grid-column: span 4;
+    margin-right: 0.5rem;
     .prodImageNdDes {
       flex-direction: row;
     }
     .prodImg,
     .prodDesc {
       flex: 1 1;
-      height: 170px;
     }
     .prodImg {
-      margin-right: 10px;
+      margin-right: 1rem;
     }
     button {
       width: 100%;
@@ -111,7 +102,7 @@
   }
   .product {
     grid-column: span 8;
-    padding-right: 20px;
+    margin-right: 1.2rem;
   }
   .phoneProdDes {
     flex: 1 1;
@@ -138,6 +129,6 @@
     background: initial;
   }
   .product .prodName {
-    margin-bottom: 0px;
+    margin-bottom: 0;
   }
 }
