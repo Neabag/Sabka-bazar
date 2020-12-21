@@ -17,11 +17,12 @@
   },
   "scripts": {
     "reactstart": "react-scripts start",
-    "server": "canned -p 3000 ./server",
-    "build": "react-scripts build",
+    "server": "node server.js",
+    "custom": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start": "npm-run-all --parallel reactstart server"
+    "start": "npm-run-all --parallel reactstart server",
+    "build": "npm-run-all --parallel custom server"
   },
   "eslintConfig": {
     "extends": [

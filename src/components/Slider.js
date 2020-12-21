@@ -8,7 +8,7 @@ function Slider() {
     slidesData: [],
     slideIndex: 0,
   });
-  const bannerUrl = "http://localhost:3000/banners";
+  const bannerUrl = "http://localhost:3005/banners";
   const slideRef = useRef();
   const slidesRef = useRef();
   const prevRef = useRef();

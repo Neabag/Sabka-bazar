@@ -6,7 +6,7 @@ import Slider from "./Slider";
 import "../styles/Home.scss";
 
 function Home() {
-  const categoryUrl = "https://bazarservice.herokuapp.com/categories";
+  const categoryUrl = "http://bazarservice.herokuapp.com/categories";
   const [state, setState] = useState({
     categories: [],
   });
