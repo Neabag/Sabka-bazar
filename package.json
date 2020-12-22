@@ -18,11 +18,10 @@
   "scripts": {
     "reactstart": "react-scripts start",
     "server": "node server.js",
-    "custom": "react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start": "npm-run-all --parallel reactstart server",
-    "build": "npm-run-all --parallel custom server"
+    "start": "npm-run-all --parallel reactstart server"
   },
   "eslintConfig": {
     "extends": [

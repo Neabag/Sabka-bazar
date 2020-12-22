@@ -6,9 +6,9 @@ import "../styles/Products.scss";
 
 function Products(props) {
   let { categoryID } = useParams();
-  const productsUrl = "https://bazarservice.herokuapp.com/products";
-  const categoryUrl = "https://bazarservice.herokuapp.com/categories";
-  const addTocartUrl = "https://bazarservice.herokuapp.com/addToCart";
+  const productsUrl = "http://localhost:3005/products";
+  const categoryUrl = "http://localhost:3005/categories";
+  const addTocartUrl = "http://localhost:3005/addTocart";
   const [state, setState] = useState({
     products: [],
     categories: [],
